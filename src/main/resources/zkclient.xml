@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--目前zookeeper部署在deepocean,lifedatasync和lifeplatform中的日常机器上-->
+    <bean id="rpcZkService" class="com.example.zookeeper.RpcZkService" init-method="init">
+        <property name="basePath" value="rpc"/>
+        <property name="servers">
+            <list>
+                <value>100.69.208.33:2181</value>
+                <value>10.101.104.151:2181</value>
+                <value>100.69.203.0:2181</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>
